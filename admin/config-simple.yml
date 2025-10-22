@@ -1,0 +1,52 @@
+backend:
+  name: github
+  repo: Hanyang-HCC-Lab/Industrial_AI_Bootcamp_HYU
+  branch: main
+  # GitHub Personal Access Token을 사용하는 간단한 방식
+  # 각 사용자가 https://github.com/settings/tokens 에서 토큰 생성
+  # 필요한 권한: repo
+
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+locale: 'ko'
+
+collections:
+  # 뉴스/보도자료 컬렉션
+  - name: "news"
+    label: "뉴스/보도자료"
+    label_singular: "뉴스"
+    folder: "data/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "json"
+    format: "json"
+    editor:
+      preview: false
+    fields:
+      - {label: "ID", name: "id", widget: "number", value_type: "int", required: true}
+      - {label: "제목", name: "title", widget: "string", required: true}
+      - {label: "작성자", name: "author", widget: "string", required: true, default: "뉴스H"}
+      - {label: "날짜", name: "date", widget: "string", required: true, pattern: ['^\d{4}\.\d{2}\.\d{2}$', '날짜 형식은 YYYY.MM.DD 이어야 합니다'], hint: "형식: 2025.10.15"}
+      - {label: "썸네일 이미지 URL", name: "thumbnail", widget: "string", required: true}
+      - {label: "요약", name: "summary", widget: "text", required: true}
+      - {label: "링크 URL", name: "link", widget: "string", required: true}
+
+  # 공지사항 컬렉션
+  - name: "notices"
+    label: "공지사항"
+    label_singular: "공지"
+    folder: "data/notices"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "json"
+    format: "json"
+    editor:
+      preview: false
+    fields:
+      - {label: "ID", name: "id", widget: "number", value_type: "int", required: true}
+      - {label: "제목", name: "title", widget: "string", required: true}
+      - {label: "작성자", name: "author", widget: "string", required: true, default: "관리자"}
+      - {label: "날짜", name: "date", widget: "string", required: true, pattern: ['^\d{4}\.\d{2}\.\d{2}$', '날짜 형식은 YYYY.MM.DD 이어야 합니다'], hint: "형식: 2025.10.15"}
+      - {label: "새 글 여부", name: "isNew", widget: "boolean", required: true, default: false}
+      - {label: "내용", name: "content", widget: "markdown", required: true, hint: "HTML 형식으로 작성됩니다"}

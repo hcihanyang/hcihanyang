@@ -25,12 +25,13 @@ function loadHeader() {
                         <ul class="dropdown">
                             <li><a href="../about/greeting.html">인사말</a></li>
                             <li><a href="../about/organization.html">조직도</a></li>
+                            <li><a href="../about/vision.html">사업단 비전 및 목표</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a href="../curriculum/overview.html">교육과정</a>
                         <ul class="dropdown">
-                            <li><a href="../curriculum/overview.html">교육과정 개요</a></li>
+                            <li><a href="../curriculum/overview.html">교육과정 차별성</a></li>
                             <li><a href="../curriculum/roadmap.html">교육과정 로드맵</a></li>
                         </ul>
                     </li>
@@ -73,9 +74,9 @@ function loadFooter() {
             <div class="footer-content">
                 <div class="footer-info">
                     <h3>산업AI 인재양성 부트캠프 사업단</h3>
-                    <p>주소: 서울시 성동구 왕십리로 222 퓨전테크센터(FTC) 503호</p>
-                    <p>전화: 02-2220-2342</p>
-                    <p>이메일: info@example.edu</p>
+                    <p>주소: 서울시 성동구 왕십리로 222 공업센터 본관 403호</p>
+                    <p>전화: 02-2220-1840</p>
+                    <p>이메일: yjhong1@hanyang.ac.kr | misunpr@gmail.com</p>
                 </div>
             </div>
             <div class="footer-bottom">

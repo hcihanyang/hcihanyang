@@ -22,6 +22,8 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--white);
+    word-break: keep-all;
+    overflow-wrap: break-word;
 }
 
 .container {
@@ -895,6 +897,7 @@ ul {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 25px;
     margin-top: 0;
+    margin-bottom: 0;
 }
 
 .org-level-admin {
@@ -1008,7 +1011,7 @@ ul {
 .org-box h3 {
     font-size: 1.15rem;
     margin-bottom: 12px;
-    margin-top: 0;
+    margin-top: 12px;
     color: var(--secondary-color);
     font-weight: 700;
     letter-spacing: -0.5px;

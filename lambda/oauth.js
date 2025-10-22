@@ -111,40 +111,57 @@ exports.handler = async (event) => {
             }
 
             // 성공 페이지 (Decap CMS에 토큰 전달)
+            // Decap CMS는 content-type이 text/html인 응답에서 postMessage를 기대함
             const successHtml = `
-                <!DOCTYPE html>
-                <html>
-                <head>
-                    <title>인증 성공</title>
-                    <meta charset="UTF-8">
-                </head>
-                <body>
-                    <script>
-                        (function() {
-                            const token = "${tokenData.access_token}";
-                            const provider = "github";
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Authentication Complete</title>
+    <script>
+        (function() {
+            // Decap CMS 인증 프로토콜
+            function receiveMessage(e) {
+                console.log("Received message from parent:", e.data);
+                // 부모로부터 메시지를 받으면 토큰 전송
+                window.opener.postMessage(
+                    'authorization:github:success:' + JSON.stringify({
+                        token: "${tokenData.access_token}",
+                        provider: "github"
+                    }),
+                    e.origin
+                );
+                window.removeEventListener("message", receiveMessage, false);
+            }
 
-                            // Decap CMS로 메시지 전송
-                            if (window.opener) {
-                                window.opener.postMessage(
-                                    'authorization:github:success:' + JSON.stringify({
-                                        token: token,
-                                        provider: provider
-                                    }),
-                                    '*'
-                                );
+            window.addEventListener("message", receiveMessage, false);
 
-                                setTimeout(function() {
-                                    window.close();
-                                }, 1000);
-                            }
-                        })();
-                    </script>
-                    <h2>인증 성공!</h2>
-                    <p>이 창은 자동으로 닫힙니다...</p>
-                    <p>닫히지 않으면 수동으로 닫아주세요.</p>
-                </body>
-                </html>
+            // 1. 먼저 준비 신호 보내기
+            window.opener.postMessage("authorizing:github", "*");
+
+            // 2. 일정 시간 후에도 응답이 없으면 강제로 토큰 전송
+            setTimeout(function() {
+                console.log("Timeout: sending token anyway");
+                window.opener.postMessage(
+                    'authorization:github:success:' + JSON.stringify({
+                        token: "${tokenData.access_token}",
+                        provider: "github"
+                    }),
+                    "*"
+                );
+            }, 100);
+
+            // 3. 1초 후 창 닫기
+            setTimeout(function() {
+                window.close();
+            }, 1000);
+        })();
+    </script>
+</head>
+<body>
+    <p>Authorizing...</p>
+</body>
+</html>
             `;
 
             return {
