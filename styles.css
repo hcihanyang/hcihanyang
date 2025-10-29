@@ -586,6 +586,17 @@ ul {
     font-size: 0.9rem;
 }
 
+.footer-email {
+    color: var(--white);
+    text-decoration: underline;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.footer-email:hover {
+    opacity: 1;
+}
+
 .footer-links h4,
 .footer-social h4 {
     font-size: 1.1rem;

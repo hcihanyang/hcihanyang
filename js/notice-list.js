@@ -7,12 +7,10 @@ let currentPage = 1;
 function loadNotices() {
     // noticesData는 data-loader.js에서 로드됨
     if (!noticesData || noticesData.length === 0) {
-        console.error('공지사항 데이터를 불러올 수 없습니다.');
+        console.warn('공지사항 데이터가 없습니다.');
         document.getElementById('notice-list').innerHTML = `
-            <div class="notice-row">
-                <div class="notice-num" colspan="5" style="text-align: center; padding: 40px; color: #999;">
-                    공지사항을 불러오는데 실패했습니다.
-                </div>
+            <div class="notice-row" style="display: block; text-align: center; padding: 40px; color: #999; grid-column: 1 / -1;">
+                등록된 공지사항이 없습니다.
             </div>
         `;
         return;
@@ -34,10 +32,8 @@ function displayNotices(page) {
 
     if (pageNotices.length === 0) {
         noticeListContainer.innerHTML = `
-            <div class="notice-row">
-                <div class="notice-num" colspan="5" style="text-align: center; padding: 40px; color: #999;">
-                    등록된 공지사항이 없습니다.
-                </div>
+            <div class="notice-row" style="display: block; text-align: center; padding: 40px; color: #999; grid-column: 1 / -1;">
+                등록된 공지사항이 없습니다.
             </div>
         `;
         return;
