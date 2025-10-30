@@ -1,0 +1,19 @@
+{
+  "name": "industrial-ai-web",
+  "version": "1.0.0",
+  "description": "산업AI 인재양성 부트캠프 사업단 웹사이트",
+  "scripts": {
+    "build": "node build-data.js",
+    "sync": "node build-data.js"
+  },
+  "keywords": [
+    "ai",
+    "bootcamp",
+    "education"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gray-matter": "^4.0.3"
+  }
+}

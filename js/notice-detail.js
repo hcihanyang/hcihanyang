@@ -37,7 +37,45 @@ function displayNoticeDetail(notice) {
     document.getElementById('notice-title').textContent = notice.title;
     document.getElementById('notice-author').textContent = notice.author;
     document.getElementById('notice-date').textContent = notice.date;
-    document.getElementById('notice-content').innerHTML = notice.content;
+
+    // 마크다운을 HTML로 변환
+    const contentHtml = typeof marked !== 'undefined'
+        ? marked.parse(notice.content)
+        : notice.content.replace(/\n/g, '<br>');
+
+    // 본문만 notice-content에 삽입
+    document.getElementById('notice-content').innerHTML = contentHtml;
+
+    // 기존 첨부파일 섹션 제거 (있다면)
+    const existingAttachments = document.querySelector('.notice-attachments');
+    if (existingAttachments) {
+        existingAttachments.remove();
+    }
+
+    // 첨부파일이 있으면 목록 버튼 바로 위에 삽입
+    if (notice.attachments && notice.attachments.length > 0) {
+        const attachmentsHtml = `
+            <div class="notice-attachments">
+                <h3>📎 첨부파일</h3>
+                <ul class="attachment-list">
+                    ${notice.attachments.map(file => `
+                        <li class="attachment-item">
+                            <a href="${file.url}" target="_blank" rel="noopener noreferrer" download>
+                                <span class="file-icon">📄</span>
+                                <span class="file-name">${file.name}</span>
+                            </a>
+                        </li>
+                    `).join('')}
+                </ul>
+            </div>
+        `;
+
+        // notice-detail-actions 요소 찾아서 그 앞에 첨부파일 섹션 삽입
+        const actionsElement = document.querySelector('.notice-detail-actions');
+        if (actionsElement) {
+            actionsElement.insertAdjacentHTML('beforebegin', attachmentsHtml);
+        }
+    }
 
     // 페이지 제목 변경
     document.title = `${notice.title} - 산업AI 인재양성 부트캠프 사업단`;

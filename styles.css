@@ -2098,7 +2098,6 @@ ul {
 .notice-detail-content {
     line-height: 1.8;
     color: var(--text-dark);
-    min-height: 300px;
 }
 
 .notice-detail-content h3 {
@@ -2136,6 +2135,66 @@ ul {
 
 .notice-detail-content a:hover {
     color: var(--hover-color);
+}
+
+/* Notice Attachments */
+.notice-attachments {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    background-color: var(--bg-light);
+    border-radius: 6px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.notice-attachments h3 {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-top: 0;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.attachment-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.attachment-item {
+    margin: 3px 0;
+}
+
+.attachment-item a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    background-color: var(--white);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.attachment-item a:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(0, 85, 166, 0.3);
+}
+
+.file-icon {
+    font-size: 1.2rem;
+}
+
+.file-name {
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.attachment-item a:hover .file-name {
+    color: var(--white);
 }
 
 .notice-detail-actions {
