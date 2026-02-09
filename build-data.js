@@ -81,4 +81,16 @@ const noticesOutputPath = path.join(__dirname, 'data', 'notices-data.json');
 fs.writeFileSync(noticesOutputPath, JSON.stringify(noticesData, null, 2));
 console.log(`✓ 공지사항 ${noticesData.length}개 통합 완료: ${noticesOutputPath}`);
 
+// 갤러리 데이터 통합
+console.log('갤러리 데이터 통합 중...');
+const galleryDir = path.join(__dirname, 'data', 'gallery');
+const galleryData = readAllDataFiles(galleryDir);
+
+// ID로 정렬 (최신순)
+galleryData.sort((a, b) => b.id - a.id);
+
+const galleryOutputPath = path.join(__dirname, 'data', 'gallery-data.json');
+fs.writeFileSync(galleryOutputPath, JSON.stringify(galleryData, null, 2));
+console.log(`✓ 갤러리 ${galleryData.length}개 통합 완료: ${galleryOutputPath}`);
+
 console.log('\n빌드 완료!');

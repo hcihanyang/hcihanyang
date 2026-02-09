@@ -1,0 +1,18 @@
+[
+  {
+    "id": 2,
+    "title": "2026년 HCI Korea 학술대회 Creative Award 프로그램 대상, 뉴챌린지상 수상",
+    "date": "2026.01.27",
+    "thumbnail": "https://s3.ap-northeast-2.amazonaws.com/aibootcamp.hanyang.ac.kr/assets/gallery/HCIK2026_Award_1.jpeg",
+    "summary": "산업AI 인재양성 부트캠프 사업단의 지원으로 HCI Korea 2026 학술대회에 참여한 데이터사이언스학부 BeMARS 팀이 Creative Award 프로그램에서 대상을 수상하였습니다.",
+    "content": "**일시**: 2026년 01월 27일 (화)\n\n산업AI 인재양성 부트캠프 사업단의 지원으로 HCI Korea 2026 학술대회에 참여한 데이터사이언스학부 BeMARS, SWELL 팀이 Creative Award 프로그램에서 대상과 뉴챌린지상을 수상하였습니다.\n\n<img src=\"https://s3.ap-northeast-2.amazonaws.com/aibootcamp.hanyang.ac.kr/assets/gallery/HCIK2026_Award_1.jpeg\" alt=\"대상 수상 사진\" style=\"width: 100%; max-width: 800px; height: auto; margin: 20px auto; display: block;\">\n\n__작품명__: BeMARS: 에이전트 추천시스템 기반 비즈니스 인맥 관리 서비스   \n__저자명__: 지문호, 안연주, 이태환, 이태호, 박찬형, 한경식 (한양대학교 데이터사이언스학부)   \n__작품내용__: 전문적인 관계를 관리하는 일은 수많은 연락처와 상황 인지적인 상호작용의 필요성 때문에 복잡하며, 특히 비즈니스 연락처를 정리하고 적절한 선물을 선택하는 과정에서 어려움이 크다. 이러한 문제를 해결하기 위해 우리는 명함 지갑, 메모를 활용한 설명 가능 LLM 기반 선물 추천 시스템, 그리고 일정 관리를 하나의 인터페이스로 결합한 비즈니스 네트워크 관리 서비스 Bemars를 제안한다. 해당 서비스를 웹앱 어플리케이션으로 구현한 GPT-4b는 실사용자 평가 결과 높은 사용성과 수용도가 확인되었으며, 약 90%의 사용자 만족도가 확인되었다. 정성적 피드백에 따르면, 시각적 분류를 통한 맥락 인지 향상, 설명 가능한 추천으로 인한 신뢰도 증가, 메모 기록의 통합 분석을 통한 사용자 관계 프로파일링 그리고 특히 명함 관리에서의 직관적인 상호작용이 주요 장점으로 나타났다.\n<img src=\"https://s3.ap-northeast-2.amazonaws.com/aibootcamp.hanyang.ac.kr/assets/gallery/HCIK2026_Award_2.png\" alt=\"뉴챌린지상 수상 사진\" style=\"width: 100%; max-width: 800px; height: auto; margin: 20px auto; display: block;\">\n\n__작품명__: SWELL: 개인화 추천 및 AI 가상 피팅 통합 스와이프형 패션 플랫폼   \n__저자명__: 이동헌, 윤지찬, 정유진, 김나연, 장영욱, 한경식 (한양대학교 데이터사이언스학부)   \n__작품내용__: 본 연구는 랭킹 기반 추천으로 인한 온라인 패션 시장의 획일화 문제를 해결하고자, 개인화 추천 및 AI 가상 피팅 통합 플랫폼 SWELL을 제안한다. SWELL은 멀티모달 임베딩 기반의 Cold Start와 Night-Day 하이브리드 아키텍처를 적용한 Warm Start 전략을 통해 정교한 맞춤형 추천을 수행한다. 또한 탐색 효율성 및 사용자 경험 향상을 위해 직관적인 스와이프 UI와 생성형 AI 가상 피팅 및 대규모 언어모델(Large Language Model) 기반 평가를 제공하여 코디 탐색의 몰입도를 높이고 구매 의사결정을 지원한다. 20대 남녀 59명을 대상으로 한 사용자 실험 결과, 정량적 평가에서는 추천 타당성과 UI 간편성에서 84.75%의 높은 만족도를 기록하였으며, 정성적 평가에서는 심미적 디자인과 탐색 효율성 측면에서 긍정적인 평가를 받았다. 본 연구는 HCI 관점에서 사용자 니즈 분석을 통해 온라인 패션 시장의 근본적 문제를 재정의하고, 스와이프 UI와 가상 피팅을 통합한 사용자 중심 플랫폼 설계의 실용적 사례를 제시한다는 점에서 의의가 있다.\n\n\n<br>\n\n**문의**: 한양대학교 산업AI부트캠프사업단 (02-2220-4803, yjhong1@hanyang.ac.kr)"
+  },
+  {
+    "id": 1,
+    "title": "2025년 산업AI 부트캠프 인재양성 사업단 워크숍",
+    "date": "2025.11.26",
+    "thumbnail": "https://s3.ap-northeast-2.amazonaws.com/aibootcamp.hanyang.ac.kr/assets/gallery/workshop_2025_1.jpeg",
+    "summary": "2025년 산업AI 인재양성 부트캠프 사업단의 워크숍이 개최되었습니다. 데이터사이언스학부, 미래자동차공학과, 컴퓨터소프트웨어학부, SW/AI융합원의 참여 교수님들을 모시고 사업단의 교육과정 운영, 계획에 대한 논의를 진행하였습니다.",
+    "content": "**일시**: 2025년 11월 26일 (수) 오후 5:30 - 8:00\n\n2025년 산업AI 인재양성 부트캠프 사업단의 워크숍이 개최되었습니다.  \n데이터사이언스학부, 미래자동차공학과, 컴퓨터소프트웨어학부, SW/AI융합원의 참여 교수님들을 모시고 사업단의 교육과정 운영, 계획에 대한 논의를 진행하였습니다.\n\n<img src=\"https://s3.ap-northeast-2.amazonaws.com/aibootcamp.hanyang.ac.kr/assets/gallery/workshop_2025_1.jpeg\" alt=\"워크숍 사진 1\" style=\"width: 100%; max-width: 800px; height: auto; margin: 20px auto; display: block;\">\n\n<img src=\"https://s3.ap-northeast-2.amazonaws.com/aibootcamp.hanyang.ac.kr/assets/gallery/workshop_2025_2.jpg\" alt=\"워크숍 사진 2\" style=\"width: 100%; max-width: 800px; height: auto; margin: 20px auto; display: block;\">\n\n<br>\n\n**문의**: 한양대학교 산업AI부트캠프사업단 (02-2220-4803, yjhong1@hanyang.ac.kr)"
+  }
+]

@@ -2310,3 +2310,171 @@ ul {
         grid-template-columns: 1fr;
     }
 }
+
+/* Popup Modal Styles - Classic */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    display: none;
+}
+
+.popup-overlay.active {
+    display: flex;
+}
+
+.popup-modal {
+    background-color: #ffffff;
+    border: 2px solid #333;
+    max-width: 550px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.popup-header {
+    background-color: #0055a6;
+    color: #ffffff;
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #003d7a;
+}
+
+.popup-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.popup-close {
+    background-color: #ffffff;
+    border: 1px solid #333;
+    color: #333;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 2px 8px;
+    line-height: 1;
+}
+
+.popup-close:hover {
+    background-color: #f0f0f0;
+}
+
+.popup-content {
+    padding: 20px;
+}
+
+.popup-info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+}
+
+.popup-info-table th,
+.popup-info-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.popup-info-table th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+    width: 30%;
+}
+
+.popup-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 15px 0;
+    color: #333;
+}
+
+.popup-course-list {
+    list-style: disc;
+    padding-left: 20px;
+    margin: 15px 0;
+}
+
+.popup-course-list li {
+    padding: 4px 0;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.popup-buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.popup-link-btn {
+    flex: 1;
+    display: block;
+    text-align: center;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border: 1px solid #0055a6;
+    color: #0055a6;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.popup-link-btn:hover {
+    background-color: #0055a6;
+    color: #ffffff;
+}
+
+.popup-footer {
+    padding: 12px 20px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+.popup-footer label {
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.popup-footer input[type="checkbox"] {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+/* Popup Responsive */
+@media (max-width: 768px) {
+    .popup-modal {
+        max-width: 95%;
+        width: 95%;
+    }
+
+    .popup-header h3 {
+        font-size: 1rem;
+    }
+
+    .popup-content {
+        padding: 15px;
+    }
+
+    .popup-buttons {
+        flex-direction: column;
+    }
+
+    .popup-info-table th {
+        width: 35%;
+    }
+}

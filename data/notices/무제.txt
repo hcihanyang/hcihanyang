@@ -1,0 +1,12 @@
+curl --location 'https://bridge.luxiacloud.com/luxia/v1/chat' \
+--header 'apikey: YOUR_API_KEY' \
+--header 'Content-Type: application/json' \
+--data '{
+  "model": "gpt-4o-mini",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Hello!"
+    }
+  ]
+}'

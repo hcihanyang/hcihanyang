@@ -49,3 +49,22 @@ collections:
       - {label: "날짜", name: "date", widget: "string", required: true, pattern: ['^\d{4}\.\d{2}\.\d{2}$', '날짜 형식은 YYYY.MM.DD 이어야 합니다'], hint: "형식: 2025.10.15"}
       - {label: "새 글 여부", name: "isNew", widget: "boolean", required: true, default: false}
       - {label: "내용", name: "content", widget: "markdown", required: true, hint: "HTML 형식으로 작성됩니다"}
+
+  # 갤러리 컬렉션
+  - name: "gallery"
+    label: "갤러리"
+    label_singular: "갤러리"
+    folder: "data/gallery"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    editor:
+      preview: false
+    fields:
+      - {label: "ID", name: "id", widget: "number", value_type: "int", required: true}
+      - {label: "제목", name: "title", widget: "string", required: true}
+      - {label: "날짜", name: "date", widget: "string", required: true, pattern: ['^\d{4}\.\d{2}\.\d{2}$', '날짜 형식은 YYYY.MM.DD 이어야 합니다'], hint: "형식: 2025.10.15"}
+      - {label: "썸네일 이미지 URL", name: "thumbnail", widget: "string", required: true}
+      - {label: "요약", name: "summary", widget: "text", required: true}
+      - {label: "내용", name: "body", widget: "markdown", required: true, hint: "Markdown 형식으로 작성됩니다"}

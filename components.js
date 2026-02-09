@@ -52,6 +52,7 @@ function loadHeader() {
                         <ul class="dropdown">
                             <li><a href="../community/notice.html">공지사항</a></li>
                             <li><a href="../community/news.html">뉴스/보도자료</a></li>
+                            <li><a href="../community/gallery.html">갤러리</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -75,8 +76,8 @@ function loadFooter() {
                 <div class="footer-info">
                     <h3>산업AI 인재양성 부트캠프 사업단</h3>
                     <p>주소: 서울시 성동구 왕십리로 222 공업센터 본관 403호</p>
-                    <p>전화: 02-2220-4803</p>
-                    <p>이메일: <a href="mailto:yjhong1@hanyang.ac.kr" class="footer-email">yjhong1@hanyang.ac.kr</a> | <a href="mailto:misunpr@hanyang.ac.kr" class="footer-email">misunpr@hanyang.ac.kr</a></p>
+                    <p>전화: 02-2220-4803 | 02-2220-4802</p>
+                    <p>이메일: <a href="mailto:yjhong1@hanyang.ac.kr" class="footer-email">yjhong1@hanyang.ac.kr</a> | <a href="mailto:pollin@hanyang.ac.kr" class="footer-email">pollin@hanyang.ac.kr</a></p>
                 </div>
             </div>
             <div class="footer-bottom">

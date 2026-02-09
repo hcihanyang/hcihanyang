@@ -4,7 +4,8 @@
 // 뉴스 데이터 로드
 async function loadNewsData() {
     try {
-        const response = await fetch('/data/news-data.json');
+        const timestamp = new Date().getTime();
+        const response = await fetch(`/data/news-data.json?t=${timestamp}`);
         if (!response.ok) throw new Error('뉴스 데이터 로드 실패');
         return await response.json();
     } catch (error) {
@@ -16,7 +17,8 @@ async function loadNewsData() {
 // 공지사항 데이터 로드
 async function loadNoticesData() {
     try {
-        const response = await fetch('/data/notices-data.json');
+        const timestamp = new Date().getTime();
+        const response = await fetch(`/data/notices-data.json?t=${timestamp}`);
         if (!response.ok) throw new Error('공지사항 데이터 로드 실패');
         return await response.json();
     } catch (error) {
@@ -25,18 +27,33 @@ async function loadNoticesData() {
     }
 }
 
+// 갤러리 데이터 로드
+async function loadGalleryData() {
+    try {
+        const timestamp = new Date().getTime();
+        const response = await fetch(`/data/gallery-data.json?t=${timestamp}`);
+        if (!response.ok) throw new Error('갤러리 데이터 로드 실패');
+        return await response.json();
+    } catch (error) {
+        console.error('갤러리 데이터 로드 오류:', error);
+        return [];
+    }
+}
+
 // 전역 변수로 데이터 설정 (기존 코드와 호환성 유지)
 let newsData = [];
 let noticesData = [];
+let galleryData = [];
 
 // 데이터 초기화
 async function initializeData() {
     newsData = await loadNewsData();
     noticesData = await loadNoticesData();
+    galleryData = await loadGalleryData();
 
     // 데이터 로드 완료 이벤트 발생
     window.dispatchEvent(new CustomEvent('dataLoaded', {
-        detail: { newsData, noticesData }
+        detail: { newsData, noticesData, galleryData }
     }));
 }
 
