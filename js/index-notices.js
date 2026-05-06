@@ -1,57 +1,54 @@
-// index.html 메인 페이지 공지사항 로드
+// index.html 메인 페이지 탭 섹션 렌더링
 
 function initializeIndexPage() {
-    // 공지사항 섹션 처리
-    if (noticesData && noticesData.length > 0) {
-        // ID 기준 내림차순 정렬 (최신 글이 위로)
-        const sortedNotices = [...noticesData].sort((a, b) => b.id - a.id);
-
-        // 최신 5개만 표시
-        const recentNotices = sortedNotices.slice(0, 5);
-
-        // 공지사항 목록 업데이트
-        const noticeList = document.querySelector('.notice-list');
-        if (noticeList) {
-            noticeList.innerHTML = recentNotices.map(notice => `
-                <li class="notice-item">
-                    <span class="notice-badge ${notice.isNew ? 'new' : ''}">${notice.isNew ? 'NEW' : '공지'}</span>
-                    <a href="community/notice-detail.html?id=${notice.id}" class="notice-title">${notice.title}</a>
-                    <span class="notice-date">${notice.date}</span>
+    // ── News ──
+    const newsList = document.getElementById('home-news-list');
+    if (newsList) {
+        if (newsData && newsData.length > 0) {
+            const sorted = [...newsData].sort((a, b) => b.id - a.id).slice(0, 5);
+            newsList.innerHTML = sorted.map(n => `
+                <li class="home-notice-item">
+                    <span class="notice-badge ${n.isNew ? 'new' : ''}">${n.isNew ? 'NEW' : 'Notice'}</span>
+                    <a href="community/notice-detail.html?id=${n.id}" class="notice-title">${n.title}</a>
+                    <span class="notice-date">${n.date}</span>
                 </li>
             `).join('');
-        }
-    } else {
-        console.warn('공지사항 데이터가 없습니다.');
-        const noticeList = document.querySelector('.notice-list');
-        if (noticeList) {
-            noticeList.innerHTML = '<li class="notice-item" style="text-align: center; color: #999;">등록된 공지사항이 없습니다.</li>';
+        } else {
+            newsList.innerHTML = '<li class="home-notice-item" style="color:#999;justify-content:center;">No news yet.</li>';
         }
     }
 
-    // 뉴스 섹션 - newsData 사용 (외부 링크)
-    if (newsData && newsData.length > 0) {
-        const sortedNews = [...newsData].sort((a, b) => b.id - a.id);
-        const recentNews = sortedNews.slice(0, 2);
-
-        const newsGrid = document.querySelector('.news-grid');
-        if (newsGrid) {
-            newsGrid.innerHTML = recentNews.map(news => `
-                <article class="news-card">
-                    <div class="news-thumbnail">
-                        <a href="${news.link}" target="_blank" rel="noopener noreferrer">
-                            <img src="${news.thumbnail}" alt="${news.title}">
-                        </a>
-                    </div>
-                    <div class="news-content">
-                        <h3><a href="${news.link}" target="_blank" rel="noopener noreferrer">${news.title}</a></h3>
-                        <p>${news.summary}</p>
-                        <span class="news-date">${news.date}</span>
-                    </div>
-                </article>
+    // ── Events ──
+    const eventsList = document.getElementById('home-events-list');
+    if (eventsList) {
+        if (eventsData && eventsData.length > 0) {
+            const sorted = [...eventsData].sort((a, b) => b.id - a.id).slice(0, 5);
+            eventsList.innerHTML = sorted.map(n => `
+                <li class="home-notice-item">
+                    <span class="notice-badge ${n.isNew ? 'new' : ''}">Event</span>
+                    <a href="community/news-detail.html?id=${n.id}" class="notice-title">${n.title}</a>
+                    <span class="notice-date">${n.date}</span>
+                </li>
             `).join('');
+        } else {
+            eventsList.innerHTML = '<li class="home-notice-item" style="color:#999;justify-content:center;">No events yet.</li>';
+        }
+    }
+
+    // ── Gallery ──
+    const galleryGrid = document.getElementById('home-gallery-grid');
+    if (galleryGrid) {
+        if (galleryData && galleryData.length > 0) {
+            const sorted = [...galleryData].sort((a, b) => b.id - a.id).slice(0, 3);
+            galleryGrid.innerHTML = sorted.map(g => `
+                <div class="home-gallery-item">
+                    <img src="${g.thumbnail}" alt="${g.title}" loading="lazy">
+                </div>
+            `).join('');
+        } else {
+            galleryGrid.innerHTML = '<p style="color:#999;grid-column:1/-1;text-align:center;padding:40px 0;">No gallery items yet.</p>';
         }
     }
 }
 
-// 데이터 로드 완료 후 실행
 window.addEventListener('dataLoaded', initializeIndexPage);

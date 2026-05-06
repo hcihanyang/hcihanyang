@@ -1,28 +1,28 @@
 // CMS에서 관리되는 데이터를 로드하는 스크립트
 // build-data.js 스크립트가 빌드 시 통합 JSON 파일을 생성함
 
-// 뉴스 데이터 로드
+// News 데이터 로드
 async function loadNewsData() {
     try {
         const timestamp = new Date().getTime();
         const response = await fetch(`/data/news-data.json?t=${timestamp}`);
-        if (!response.ok) throw new Error('뉴스 데이터 로드 실패');
+        if (!response.ok) throw new Error('News 데이터 로드 실패');
         return await response.json();
     } catch (error) {
-        console.error('뉴스 데이터 로드 오류:', error);
+        console.error('News 데이터 로드 오류:', error);
         return [];
     }
 }
 
-// 공지사항 데이터 로드
-async function loadNoticesData() {
+// Events 데이터 로드
+async function loadEventsData() {
     try {
         const timestamp = new Date().getTime();
-        const response = await fetch(`/data/notices-data.json?t=${timestamp}`);
-        if (!response.ok) throw new Error('공지사항 데이터 로드 실패');
+        const response = await fetch(`/data/events-data.json?t=${timestamp}`);
+        if (!response.ok) throw new Error('Events 데이터 로드 실패');
         return await response.json();
     } catch (error) {
-        console.error('공지사항 데이터 로드 오류:', error);
+        console.error('Events 데이터 로드 오류:', error);
         return [];
     }
 }
@@ -40,20 +40,19 @@ async function loadGalleryData() {
     }
 }
 
-// 전역 변수로 데이터 설정 (기존 코드와 호환성 유지)
+// 전역 변수
 let newsData = [];
-let noticesData = [];
+let eventsData = [];
 let galleryData = [];
 
 // 데이터 초기화
 async function initializeData() {
     newsData = await loadNewsData();
-    noticesData = await loadNoticesData();
+    eventsData = await loadEventsData();
     galleryData = await loadGalleryData();
 
-    // 데이터 로드 완료 이벤트 발생
     window.dispatchEvent(new CustomEvent('dataLoaded', {
-        detail: { newsData, noticesData, galleryData }
+        detail: { newsData, eventsData, galleryData }
     }));
 }
 

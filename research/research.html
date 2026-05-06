@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - HY HCI Group</title>
+    <link rel="stylesheet" href="../styles.css?v=20251128">
+    <style>
+        .research-intro {
+            padding: 40px 0 8px;
+        }
+        .research-intro p {
+            font-size: 1.8rem;
+            color: #444;
+            line-height: 1.4;
+            font-weight: 400;
+        }
+
+        /* ── Grid: 2 columns ── */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            padding: 40px 0 60px;
+        }
+        @media (max-width: 640px) {
+            .research-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ── Card ── */
+        .research-card {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e4e8f0;
+            background: #fff;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .research-card:hover {
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.10);
+            transform: translateY(-3px);
+        }
+
+        .research-card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .research-card-body {
+            padding: 22px 24px 26px;
+        }
+
+        .research-card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #111;
+            margin: 0 0 12px;
+        }
+
+        .research-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 14px;
+        }
+        .research-keyword {
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: #eef2ff;
+            color: #0057a8;
+            border-radius: 4px;
+            padding: 3px 9px;
+        }
+
+        .research-desc {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.7;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="page-content">
+        <div class="page-header">
+            <div class="container">
+                <h1 class="page-title">Research</h1>
+                <p class="page-breadcrumb">
+                    <a href="../index.html">Home</a> &gt;
+                    <span>Research</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="research-grid">
+
+                <!-- Immersive Experience -->
+                <div class="research-card">
+                    <img class="research-card-img"
+                         src="https://picsum.photos/seed/vr-immersive/800/400"
+                         alt="Immersive Experience">
+                    <div class="research-card-body">
+                        <h2 class="research-card-title">Immersive Experience</h2>
+                        <div class="research-keywords">
+                            <span class="research-keyword">VR/AR/MR</span>
+                            <span class="research-keyword">Spatial Computing</span>
+                            <span class="research-keyword">Embodied Interaction</span>
+                            <span class="research-keyword">Presence</span>
+                        </div>
+                        <p class="research-desc">
+                            We design and evaluate immersive environments using VR, AR, and mixed
+                            reality to enhance training, collaboration, and situated experiences.
+                            Our research investigates how spatial interaction and embodied feedback
+                            shape user presence, performance, and well-being.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Human-Robot Interaction -->
+                <div class="research-card">
+                    <img class="research-card-img"
+                         src="https://picsum.photos/seed/robot-hri/800/400"
+                         alt="Human-Robot Interaction">
+                    <div class="research-card-body">
+                        <h2 class="research-card-title">Human-Robot Interaction</h2>
+                        <div class="research-keywords">
+                            <span class="research-keyword">Collaborative Robots</span>
+                            <span class="research-keyword">Teleoperation</span>
+                            <span class="research-keyword">Intent Recognition</span>
+                            <span class="research-keyword">Safety</span>
+                        </div>
+                        <p class="research-desc">
+                            Our work explores intuitive interfaces and communication protocols
+                            that enable safe, efficient collaboration between humans and robots.
+                            We investigate shared autonomy, real-time intent recognition, and
+                            multimodal feedback to reduce operator workload and improve
+                            task performance in both industrial and service robot settings.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Creativity Support Tools -->
+                <div class="research-card">
+                    <img class="research-card-img"
+                         src="https://picsum.photos/seed/creativity-design/800/400"
+                         alt="Creativity Support Tools">
+                    <div class="research-card-body">
+                        <h2 class="research-card-title">Creativity Support Tools</h2>
+                        <div class="research-keywords">
+                            <span class="research-keyword">Generative AI</span>
+                            <span class="research-keyword">Co-creation</span>
+                            <span class="research-keyword">Ideation</span>
+                            <span class="research-keyword">Design Tools</span>
+                        </div>
+                        <p class="research-desc">
+                            We build and evaluate AI-powered tools that augment human creativity,
+                            reducing friction in ideation while preserving the designer's agency.
+                            Our research spans generative co-creation, mixed-initiative design
+                            systems, and longitudinal studies of how intelligent tools shape
+                            creative practice across domains such as visual design, writing,
+                            and engineering problem-solving.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Personalization AI -->
+                <div class="research-card">
+                    <img class="research-card-img"
+                         src="https://picsum.photos/seed/personalization-user/800/400"
+                         alt="Personalization AI">
+                    <div class="research-card-body">
+                        <h2 class="research-card-title">Personalization AI</h2>
+                        <div class="research-keywords">
+                            <span class="research-keyword">User Modeling</span>
+                            <span class="research-keyword">Adaptive Interfaces</span>
+                            <span class="research-keyword">Recommendation</span>
+                            <span class="research-keyword">Context-awareness</span>
+                        </div>
+                        <p class="research-desc">
+                            We investigate how AI can learn individual user preferences and
+                            dynamically adapt interfaces and workflows to fit each person.
+                            Our research combines behavioral modeling, implicit feedback signals,
+                            and privacy-preserving learning to build systems that personalize
+                            at scale without compromising user autonomy or data security.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- AI Safety -->
+                <div class="research-card">
+                    <img class="research-card-img"
+                         src="https://picsum.photos/seed/ai-safety-align/800/400"
+                         alt="AI Safety">
+                    <div class="research-card-body">
+                        <h2 class="research-card-title">AI Safety</h2>
+                        <div class="research-keywords">
+                            <span class="research-keyword">Alignment</span>
+                            <span class="research-keyword">Robustness</span>
+                            <span class="research-keyword">Fairness &amp; Bias</span>
+                            <span class="research-keyword">Adversarial Attacks</span>
+                        </div>
+                        <p class="research-desc">
+                            We investigate the reliability, fairness, and alignment of AI systems
+                            deployed in high-stakes environments. Our work spans adversarial
+                            robustness, bias detection and mitigation, and human oversight
+                            mechanisms that keep AI behavior predictable and aligned with
+                            human values.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Digital Health Care -->
+                <div class="research-card">
+                    <img class="research-card-img"
+                         src="https://picsum.photos/seed/digital-health/800/400"
+                         alt="Digital Health Care">
+                    <div class="research-card-body">
+                        <h2 class="research-card-title">Digital Health Care</h2>
+                        <div class="research-keywords">
+                            <span class="research-keyword">mHealth</span>
+                            <span class="research-keyword">Wearables</span>
+                            <span class="research-keyword">Patient Monitoring</span>
+                            <span class="research-keyword">Clinical AI</span>
+                        </div>
+                        <p class="research-desc">
+                            We design and evaluate AI-driven health technologies that support
+                            patients, caregivers, and clinicians. Our research covers wearable
+                            sensing for continuous health monitoring, intelligent symptom
+                            tracking applications, and decision-support tools that augment
+                            clinical judgment while preserving human oversight.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../components.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

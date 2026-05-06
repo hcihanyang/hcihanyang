@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - HY HCI Group</title>
+    <link rel="stylesheet" href="../styles.css?v=20251128">
+    <style>
+        .about-section {
+            padding: 60px 0;
+        }
+        .about-section + .about-section {
+            border-top: 1px solid #e8e8e8;
+            padding-top: 60px;
+        }
+        .about-section-label {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #4A77EA;
+            margin-bottom: 12px;
+        }
+        .about-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #111;
+            margin: 0 0 20px;
+            line-height: 1.25;
+        }
+        .about-section p {
+            font-size: 1.05rem;
+            color: #444;
+            line-height: 1.8;
+            max-width: 780px;
+        }
+        .about-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+        .about-card {
+            background: #f5f8ff;
+            border-radius: 10px;
+            padding: 28px 24px;
+        }
+        .about-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #4A77EA;
+            margin: 0 0 10px;
+        }
+        .about-card p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.7;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="page-content">
+        <div class="page-header">
+            <div class="container">
+                <h1 class="page-title">About</h1>
+                <p class="page-breadcrumb">
+                    <a href="../index.html">Home</a> &gt;
+                    <span>About</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <!-- Who We Are -->
+            <section class="about-section">
+                <span class="about-section-label">Who We Are</span>
+                <h2>HY HCI Group</h2>
+                <p>
+                    HY HCI Group is a research group at Hanyang University focused on
+                    Human-Computer Interaction and AI. We bring together researchers across
+                    multiple disciplines to understand how people interact with intelligent
+                    systems — and to design those systems in ways that are intuitive,
+                    transparent, and genuinely useful.
+                </p>
+                <p style="margin-top: 16px;">
+                    Our work spans foundational HCI research, AI safety, immersive experience,
+                    and digital health, grounded in rigorous empirical methods and published
+                    at top-tier venues in HCI and AI.
+                </p>
+            </section>
+
+            <!-- Our Vision -->
+            <section class="about-section">
+                <span class="about-section-label">Our Vision</span>
+                <h2>Shaping the Future of Human-AI Collaboration</h2>
+                <p>
+                    We envision a world where AI amplifies human capability rather than replacing it —
+                    where people are empowered by intelligent systems that understand context,
+                    communicate their reasoning, and adapt to individual needs. HY HCI Group
+                    pursues this vision through rigorous research that puts human experience
+                    at the center of AI design.
+                </p>
+            </section>
+
+            <!-- Our Mission -->
+            <section class="about-section">
+                <span class="about-section-label">Our Mission</span>
+                <h2>Discover, Design, Disseminate</h2>
+                <p>
+                    Our mission is to advance knowledge at the intersection of HCI and AI —
+                    discovering new insights about human behavior, designing systems that
+                    reflect those insights, and disseminating our findings to the broader
+                    research community.
+                </p>
+                <div class="about-cards">
+                    <div class="about-card">
+                        <h3>Discover</h3>
+                        <p>Conduct rigorous empirical research to deepen our understanding of how people perceive, interact with, and are affected by AI systems.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Design</h3>
+                        <p>Build novel interactive systems and AI-driven tools grounded in human-centered principles, evaluated through iterative user studies.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Disseminate</h3>
+                        <p>Share our findings through publications at premier HCI and AI venues, open-source releases, and collaborative engagement with the research community.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../components.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -57,40 +57,39 @@ function readAllDataFiles(dir) {
     return allData;
 }
 
-// 뉴스 데이터 통합
-console.log('뉴스 데이터 통합 중...');
+// News 데이터 통합
+console.log('News 데이터 통합 중...');
 const newsDir = path.join(__dirname, 'data', 'news');
 const newsData = readAllDataFiles(newsDir);
 
-// ID로 정렬 (최신순)
 newsData.sort((a, b) => b.id - a.id);
 
 const newsOutputPath = path.join(__dirname, 'data', 'news-data.json');
 fs.writeFileSync(newsOutputPath, JSON.stringify(newsData, null, 2));
-console.log(`✓ 뉴스 ${newsData.length}개 통합 완료: ${newsOutputPath}`);
+console.log(`✓ News ${newsData.length}개 통합 완료: ${newsOutputPath}`);
 
-// 공지사항 데이터 통합
-console.log('공지사항 데이터 통합 중...');
-const noticesDir = path.join(__dirname, 'data', 'notices');
-const noticesData = readAllDataFiles(noticesDir);
+// Events 데이터 통합
+console.log('Events 데이터 통합 중...');
+const eventsDir = path.join(__dirname, 'data', 'events');
+const eventsData = readAllDataFiles(eventsDir);
 
-// ID로 정렬 (최신순)
-noticesData.sort((a, b) => b.id - a.id);
+eventsData.sort((a, b) => b.id - a.id);
 
-const noticesOutputPath = path.join(__dirname, 'data', 'notices-data.json');
-fs.writeFileSync(noticesOutputPath, JSON.stringify(noticesData, null, 2));
-console.log(`✓ 공지사항 ${noticesData.length}개 통합 완료: ${noticesOutputPath}`);
+const eventsOutputPath = path.join(__dirname, 'data', 'events-data.json');
+fs.writeFileSync(eventsOutputPath, JSON.stringify(eventsData, null, 2));
+console.log(`✓ Events ${eventsData.length}개 통합 완료: ${eventsOutputPath}`);
 
 // 갤러리 데이터 통합
 console.log('갤러리 데이터 통합 중...');
 const galleryDir = path.join(__dirname, 'data', 'gallery');
-const galleryData = readAllDataFiles(galleryDir);
-
-// ID로 정렬 (최신순)
-galleryData.sort((a, b) => b.id - a.id);
-
 const galleryOutputPath = path.join(__dirname, 'data', 'gallery-data.json');
-fs.writeFileSync(galleryOutputPath, JSON.stringify(galleryData, null, 2));
-console.log(`✓ 갤러리 ${galleryData.length}개 통합 완료: ${galleryOutputPath}`);
+if (fs.existsSync(galleryDir)) {
+    const galleryData = readAllDataFiles(galleryDir);
+    galleryData.sort((a, b) => b.id - a.id);
+    fs.writeFileSync(galleryOutputPath, JSON.stringify(galleryData, null, 2));
+    console.log(`✓ 갤러리 ${galleryData.length}개 통합 완료: ${galleryOutputPath}`);
+} else {
+    console.log('⚠ 갤러리 소스 폴더 없음 — gallery-data.json 유지');
+}
 
 console.log('\n빌드 완료!');

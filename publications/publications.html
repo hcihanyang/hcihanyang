@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - HY HCI Group</title>
+    <link rel="stylesheet" href="../styles.css?v=20251128">
+    <style>
+        /* ── Tab filter ── */
+        .people-tabs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin: 40px 0 36px;
+        }
+        .tab-btn {
+            padding: 8px 20px;
+            border: 2px solid #4A77EA;
+            border-radius: 999px;
+            background: transparent;
+            color: #4A77EA;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.18s, color 0.18s;
+        }
+        .tab-btn.active,
+        .tab-btn:hover {
+            background: #4A77EA;
+            color: #fff;
+        }
+
+        /* ── Year section ── */
+        .pub-year-section {
+            margin-bottom: 56px;
+        }
+        .pub-year-heading {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #4A77EA;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4A77EA;
+            margin-bottom: 28px;
+        }
+
+        /* ── Paper entry ── */
+        .pub-entry {
+            display: flex;
+            gap: 16px;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            align-items: flex-start;
+        }
+        .pub-entry:last-child {
+            border-bottom: none;
+        }
+
+        /* Award ribbon on left */
+        .pub-award-col {
+            flex-shrink: 0;
+            width: 28px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 3px;
+        }
+        .award-icon {
+            font-size: 1.3rem;
+            line-height: 1;
+            title: "Award";
+        }
+        .award-label {
+            font-size: 0.6rem;
+            font-weight: 700;
+            color: #b8860b;
+            text-align: center;
+            margin-top: 3px;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        /* Paper body */
+        .pub-body {
+            flex: 1;
+        }
+        .pub-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #111;
+            margin: 0 0 6px;
+            line-height: 1.45;
+        }
+        .pub-authors {
+            font-size: 0.88rem;
+            color: #555;
+            margin: 0 0 5px;
+            line-height: 1.5;
+        }
+        .pub-venue {
+            font-size: 0.88rem;
+            color: #4A77EA;
+            font-style: italic;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .pub-year-section.hidden { display: none; }
+
+        /* Award badge inline */
+        .award-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: #fff8e1;
+            border: 1px solid #f0c040;
+            border-radius: 4px;
+            padding: 2px 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #9a7000;
+            margin-left: 10px;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="page-content">
+        <div class="page-header">
+            <div class="container">
+                <h1 class="page-title">Publications</h1>
+                <p class="page-breadcrumb">
+                    <a href="../index.html">Home</a> &gt;
+                    <span>Publications</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <!-- Tab buttons -->
+            <div class="people-tabs">
+                <button class="tab-btn active" data-target="all">All</button>
+                <button class="tab-btn" data-target="pub-2026">2026</button>
+                <button class="tab-btn" data-target="pub-2025">2025</button>
+            </div>
+
+            <!-- ══ 2026 ══ -->
+            <section class="pub-year-section" id="pub-2026">
+                <h2 class="pub-year-heading">2026</h2>
+
+                <div class="pub-entry">
+                    <div class="pub-body">
+                        <p class="pub-title">
+                            Adaptive Worker Assistance in Smart Factories via Real-Time Gaze and Context Inference
+                            <span class="award-badge">🏆 Best Paper Award</span>
+                        </p>
+                        <p class="pub-authors">
+                            Han Gyeong-Sik, Choi Jun-Ho, Yoon Seo-Yeon, Park Min-Ju
+                        </p>
+                        <p class="pub-venue">ACM CHI 2026 — Proceedings of the CHI Conference on Human Factors in Computing Systems</p>
+                    </div>
+                </div>
+
+                <div class="pub-entry">
+                    <div class="pub-body">
+                        <p class="pub-title">
+                            Explainable Anomaly Detection for Industrial Equipment Using Contrastive Feature Attribution
+                        </p>
+                        <p class="pub-authors">
+                            Lim Tae-Gyu, Lee Sang-Ho, Jang Hyun-Woo
+                        </p>
+                        <p class="pub-venue">IEEE Transactions on Industrial Informatics, 2026</p>
+                    </div>
+                </div>
+
+                <div class="pub-entry">
+                    <div class="pub-body">
+                        <p class="pub-title">
+                            Designing Trust Calibration Interfaces for Human-AI Teaming in High-Stakes Environments
+                            <span class="award-badge">🏅 Honorable Mention</span>
+                        </p>
+                        <p class="pub-authors">
+                            Kim Ji-Yeon, Oh Da-Eun, Seo Eun-Bi, Park Min-Ju
+                        </p>
+                        <p class="pub-venue">ACM CHI 2026 — Proceedings of the CHI Conference on Human Factors in Computing Systems</p>
+                    </div>
+                </div>
+
+                <div class="pub-entry">
+                    <div class="pub-body">
+                        <p class="pub-title">
+                            Multimodal Intent Recognition for Collaborative Robots on the Factory Floor
+                        </p>
+                        <p class="pub-authors">
+                            Bae Sung-Jin, Choi Jun-Ho, Han Gyeong-Sik
+                        </p>
+                        <p class="pub-venue">ACM/IEEE HRI 2026 — International Conference on Human-Robot Interaction</p>
+                    </div>
+                </div>
+
+                <div class="pub-entry">
+                    <div class="pub-body">
+                        <p class="pub-title">
+                            Federated Learning with Differential Privacy for Cross-Plant Quality Prediction
+                        </p>
+                        <p class="pub-authors">
+                            Lim Tae-Gyu, Kwon Dong-Hyun, Lee Sang-Ho
+                        </p>
+                        <p class="pub-venue">ICLR 2026 — International Conference on Learning Representations</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- ══ 2025 ══ -->
+            <section class="pub-year-section" id="pub-2025">
+                <h2 class="pub-year-heading">2025</h2>
+
+                <div class="pub-entry">
+                    <div class="pub-body">
+                        <p class="pub-title">
+                            From Confusion to Clarity: A Mixed-Methods Study of Dashboard Comprehension in Industrial AI Systems
+                            <span class="award-badge">🏆 Best Paper Award</span>
+                        </p>
+                        <p class="pub-authors">
+                            Kim Ji-Yeon, Jung Hye-Rim, An Ji-Ho, Kang So-Hyun
+                        </p>
+                        <p class="pub-venue">ACM CHI 2025 — Proceedings of the CHI Conference on Human Factors in Computing Systems</p>
+                    </div>
+                </div>
+
+                <div class="pub-entry">
+                    <div class="pub-body">
+                        <p class="pub-title">
+                            Toward Inclusive AI Interfaces: Accessibility Barriers in Industrial Control Panels
+                        </p>
+                        <p class="pub-authors">
+                            Kim Ji-Yeon, Baek Yun-Seo, Oh Da-Eun
+                        </p>
+                        <p class="pub-venue">ACM ASSETS 2025 — International ACM SIGACCESS Conference on Computers and Accessibility</p>
+                    </div>
+                </div>
+
+                <div class="pub-entry">
+                    <div class="pub-body">
+                        <p class="pub-title">
+                            Predictive Maintenance Scheduling via Graph-Based Process Dependency Modeling
+                        </p>
+                        <p class="pub-authors">
+                            Kwon Dong-Hyun, Jang Hyun-Woo, Lee Sang-Ho
+                        </p>
+                        <p class="pub-venue">KDD 2025 — ACM SIGKDD Conference on Knowledge Discovery and Data Mining</p>
+                    </div>
+                </div>
+
+                <div class="pub-entry">
+                    <div class="pub-body">
+                        <p class="pub-title">
+                            AR-Guided Assembly: Reducing Cognitive Load with Spatial Instruction Overlays
+                            <span class="award-badge">🏅 Honorable Mention</span>
+                        </p>
+                        <p class="pub-authors">
+                            Yoon Seo-Yeon, Han Gyeong-Sik, Shin Ye-Jin
+                        </p>
+                        <p class="pub-venue">IEEE ISMAR 2025 — International Symposium on Mixed and Augmented Reality</p>
+                    </div>
+                </div>
+
+                <div class="pub-entry">
+                    <div class="pub-body">
+                        <p class="pub-title">
+                            Worker Fatigue Estimation from Multimodal Wearable Signals Using Temporal Attention Networks
+                        </p>
+                        <p class="pub-authors">
+                            Shin Ye-Jin, Park Min-Ju, Kim Ji-Yeon
+                        </p>
+                        <p class="pub-venue">IEEE Transactions on Neural Systems and Rehabilitation Engineering, 2025</p>
+                    </div>
+                </div>
+
+                <div class="pub-entry">
+                    <div class="pub-body">
+                        <p class="pub-title">
+                            Digital Twin-Driven Simulation for Human Factors Evaluation in Smart Manufacturing Cells
+                        </p>
+                        <p class="pub-authors">
+                            Song Mi-Rae, Jang Hyun-Woo, Lee Sang-Ho, Han Gyeong-Sik
+                        </p>
+                        <p class="pub-venue">CIRP Annals — Manufacturing Technology, 2025</p>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../components.js"></script>
+    <script src="../script.js"></script>
+    <script>
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const target = btn.dataset.target;
+                document.querySelectorAll('.pub-year-section').forEach(section => {
+                    if (target === 'all' || section.id === target) {
+                        section.classList.remove('hidden');
+                    } else {
+                        section.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

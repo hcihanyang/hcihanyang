@@ -9,8 +9,7 @@ function loadHeader() {
                         <img src="../assets/HYU_logo.png" alt="한양대학교 로고">
                     </div>
                     <div class="project-logo">
-                        <h1>산업AI 인재양성 부트캠프 사업단</h1>
-                        <p class="subtitle">Industrial AI Talent Development Bootcamp Program</p>
+                        <h1>HY HCI Group</h1>
                     </div>
                 </a>
             </div>
@@ -21,39 +20,19 @@ function loadHeader() {
             <div class="container">
                 <ul class="nav-menu">
                     <li class="nav-item">
-                        <a href="../about/greeting.html">사업단 소개</a>
-                        <ul class="dropdown">
-                            <li><a href="../about/greeting.html">인사말</a></li>
-                            <li><a href="../about/organization.html">조직도</a></li>
-                            <li><a href="../about/vision.html">사업단 비전 및 목표</a></li>
-                        </ul>
+                        <a href="../about/about.html">About</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../curriculum/overview.html">교육과정</a>
-                        <ul class="dropdown">
-                            <li><a href="../curriculum/overview.html">교육과정 차별성</a></li>
-                            <li><a href="../curriculum/roadmap.html">교육과정 로드맵</a></li>
-                        </ul>
+                        <a href="../people/people.html">People</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../support/scholarship.html">지원 프로그램</a>
-                        <ul class="dropdown">
-                            <li><a href="../support/scholarship.html">장학 안내</a></li>
-                        </ul>
+                        <a href="../community/notice.html">News</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../industry/partners.html">산학협력</a>
-                        <ul class="dropdown">
-                            <li><a href="../industry/partners.html">협력기업 소개</a></li>
-                        </ul>
+                        <a href="../community/news.html">Events</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../community/notice.html">커뮤니티</a>
-                        <ul class="dropdown">
-                            <li><a href="../community/notice.html">공지사항</a></li>
-                            <li><a href="../community/news.html">뉴스/보도자료</a></li>
-                            <li><a href="../community/gallery.html">갤러리</a></li>
-                        </ul>
+                        <a href="../community/gallery.html">Gallery</a>
                     </li>
                 </ul>
                 <button class="mobile-menu-toggle" aria-label="메뉴 열기">
@@ -74,14 +53,13 @@ function loadFooter() {
         <div class="container">
             <div class="footer-content">
                 <div class="footer-info">
-                    <h3>산업AI 인재양성 부트캠프 사업단</h3>
-                    <p>주소: 서울시 성동구 왕십리로 222 공업센터 본관 403호</p>
-                    <p>전화: 02-2220-4803 | 02-2220-4802</p>
-                    <p>이메일: <a href="mailto:yjhong1@hanyang.ac.kr" class="footer-email">yjhong1@hanyang.ac.kr</a> | <a href="mailto:pollin@hanyang.ac.kr" class="footer-email">pollin@hanyang.ac.kr</a></p>
+                    <h3>HY HCI Group</h3>
+                    <p>Location: 222, Wangsimni-ro, Seongdong-gu, Seoul, Republic of Korea</p>
+                    <p>Administrator: myungkim331@hanyang.ac.kr</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Industrial AI Talent Development Bootcamp Program. All rights reserved.</p>
+                <p>&copy; 2026 HY HCI Group. All rights reserved.</p>
             </div>
         </div>
     </footer>

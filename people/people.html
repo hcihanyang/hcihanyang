@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People - HY HCI Group</title>
+    <link rel="stylesheet" href="../styles.css?v=20251128">
+    <style>
+        /* ── Tab filter ── */
+        .people-tabs {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin: 40px 0 36px;
+        }
+        .tab-btn {
+            padding: 8px 20px;
+            border: 2px solid #4A77EA;
+            border-radius: 999px;
+            background: transparent;
+            color: #4A77EA;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.18s, color 0.18s;
+        }
+        .tab-btn.active,
+        .tab-btn:hover {
+            background: #4A77EA;
+            color: #fff;
+        }
+
+        /* ── Section ── */
+        .people-section {
+            margin-bottom: 60px;
+        }
+        .people-section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #111;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4A77EA;
+            margin-bottom: 32px;
+        }
+
+        /* ── Grid ── */
+        .people-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 32px 24px;
+        }
+
+        /* ── Card ── */
+        .person-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .person-photo {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e0e8f5;
+            margin-bottom: 14px;
+            background: #dde8f5;
+        }
+        .person-name {
+            font-size: 0.97rem;
+            font-weight: 700;
+            color: #111;
+            margin: 0 0 4px;
+        }
+        .person-title {
+            font-size: 0.82rem;
+            color: #4A77EA;
+            font-weight: 600;
+            margin: 0 0 10px;
+        }
+        .person-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px;
+        }
+        .person-name a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .person-name a:hover {
+            text-decoration: underline;
+            color: #5b9bd5;
+        }
+        .keyword-tag {
+            font-size: 0.72rem;
+            background: #f0f4ff;
+            color: #444;
+            border-radius: 4px;
+            padding: 2px 7px;
+        }
+
+        /* ── Hidden sections ── */
+        .people-section.hidden { display: none; }
+
+        /* ── Alumni list ── */
+        .alumni-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .alumni-item {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .alumni-item:last-child {
+            border-bottom: none;
+        }
+        .alumni-name {
+            font-size: 0.97rem;
+            font-weight: 700;
+            color: #111;
+            min-width: 140px;
+            flex-shrink: 0;
+        }
+        .alumni-degree {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #4A77EA;
+            min-width: 60px;
+            flex-shrink: 0;
+        }
+        .alumni-current {
+            font-size: 0.88rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="page-content">
+        <div class="page-header">
+            <div class="container">
+                <h1 class="page-title">People</h1>
+                <p class="page-breadcrumb">
+                    <a href="../index.html">Home</a> &gt;
+                    <span>People</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <!-- Tab buttons -->
+            <div class="people-tabs">
+                <button class="tab-btn active" data-target="all">All</button>
+                <button class="tab-btn" data-target="faculty">Faculty</button>
+                <button class="tab-btn" data-target="postdocs">Postdocs</button>
+                <button class="tab-btn" data-target="phd">Ph.D.</button>
+                <button class="tab-btn" data-target="master">M.S.</button>
+                <button class="tab-btn" data-target="intern">Intern</button>
+                <button class="tab-btn" data-target="alumni">Alumni</button>
+            </div>
+
+            <!-- ══ Faculty ══ -->
+            <section class="people-section" id="faculty">
+                <h2 class="people-section-title">Faculty</h2>
+                <div class="people-grid">
+
+                    <div class="person-card">
+                        <img class="person-photo" src="https://lh3.googleusercontent.com/sitesv/AA5AbUALrZztPny1yD8tGa3pA24MCCqOaqib_gas1tVrkBo6HnHGeilt-uApGpJwdtkFn9U3Dl_0nZ60JsdhnpwscaJ5TCUE-GjtFdL1gxiTtzPZ3p9bcI4cybGBq35TJE22-0Z-646Ng9y3ijrlKKd9GDNKw9sMZAPnfuFG02tqdTzRiNt72bCYbeiGtcfUTF8CPNt2FqAmbafnjzbqtyC-zsrmFQouM2cAUb3jNuY=w1280" alt="Kwanguk Kim">
+                        <p class="person-name"><a href="https://kennylab.hanyang.ac.kr" target="_blank" rel="noopener">Kwanguk Kim</a></p>
+                        <p class="person-title">Professor</p>
+                        <div class="person-keywords">
+                            <span class="keyword-tag">HCI</span>
+                            <span class="keyword-tag">HRI</span>
+                            <span class="keyword-tag">Artificial Intelligence</span>
+                        </div>
+                    </div>
+
+                    <div class="person-card">
+                        <img class="person-photo" src="https://freight.cargo.site/w/942/q/75/i/68c26029a234c9314a3f2bb1b0f71c965e0ab8f3ec591ad19f43243d33dde551/Kyung-Hoon-Hyun.jpg" alt="Kyunghoon Hyun">
+                        <p class="person-name"><a href="https://designinformatics.hanyang.ac.kr/" target="_blank" rel="noopener">Kyunghoon Hyun</a></p>
+                        <p class="person-title">Professor</p>
+                        <div class="person-keywords">
+                            <span class="keyword-tag">HCI</span>
+                            <span class="keyword-tag">Creativity Support Tool</span>
+                            <span class="keyword-tag">Artificial Intelligence</span>
+                        </div>
+                    </div>
+
+                    <div class="person-card">
+                        <img class="person-photo" src="https://hyhccl.s3.ap-northeast-2.amazonaws.com/image/members/%E1%84%92%E1%85%A1%E1%86%AB%E1%84%80%E1%85%A7%E1%86%BC%E1%84%89%E1%85%B5%E1%86%A8+%E1%84%80%E1%85%AD%E1%84%89%E1%85%AE%E1%84%82%E1%85%B5%E1%86%B7.webp" alt="Kyungsik Han">
+                        <p class="person-name"><a href="https://hcc.hanyang.ac.kr/" target="_blank" rel="noopener">Kyungsik Han</a></p>
+                        <p class="person-title">Professor</p>
+                        <div class="person-keywords">
+                            <span class="keyword-tag">HCI</span>
+                            <span class="keyword-tag">Data Science</span>
+                            <span class="keyword-tag">Artificial Intelligence</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ══ Postdocs ══ -->
+            <section class="people-section" id="postdocs">
+                <h2 class="people-section-title">Postdocs</h2>
+                <div class="people-grid">
+
+                    <div class="person-card">
+                        <img class="person-photo" src="https://randomuser.me/api/portraits/women/29.jpg" alt="Park Min-Ju">
+                        <p class="person-name">Park Min-Ju</p>
+                        <p class="person-title">Postdoctoral Researcher</p>
+                        <div class="person-keywords">
+                            <span class="keyword-tag">Explainable AI</span>
+                            <span class="keyword-tag">Human-Robot Interaction</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ══ Ph.D. ══ -->
+            <section class="people-section" id="phd">
+                <h2 class="people-section-title">Ph.D. Students</h2>
+                <div class="people-grid">
+
+                    <div class="person-card">
+                        <img class="person-photo" src="https://randomuser.me/api/portraits/men/10.jpg" alt="Choi Jun-Ho">
+                        <p class="person-name">Choi Jun-Ho</p>
+                        <p class="person-title">Ph.D. Candidate</p>
+                        <div class="person-keywords">
+                            <span class="keyword-tag">Multimodal AI</span>
+                            <span class="keyword-tag">NLP</span>
+                        </div>
+                    </div>
+
+                    <div class="person-card">
+                        <img class="person-photo" src="https://randomuser.me/api/portraits/women/12.jpg" alt="Yoon Seo-Yeon">
+                        <p class="person-name">Yoon Seo-Yeon</p>
+                        <p class="person-title">Ph.D. Candidate</p>
+                        <div class="person-keywords">
+                            <span class="keyword-tag">Interaction Design</span>
+                            <span class="keyword-tag">AR/VR</span>
+                        </div>
+                    </div>
+
+                    <div class="person-card">
+                        <img class="person-photo" src="https://randomuser.me/api/portraits/men/21.jpg" alt="Jang Hyun-Woo">
+                        <p class="person-name">Jang Hyun-Woo</p>
+                        <p class="person-title">Ph.D. Student</p>
+                        <div class="person-keywords">
+                            <span class="keyword-tag">Predictive Maintenance</span>
+                            <span class="keyword-tag">IoT</span>
+                        </div>
+                    </div>
+
+                    <div class="person-card">
+                        <img class="person-photo" src="https://randomuser.me/api/portraits/women/18.jpg" alt="Oh Da-Eun">
+                        <p class="person-name">Oh Da-Eun</p>
+                        <p class="person-title">Ph.D. Student</p>
+                        <div class="person-keywords">
+                            <span class="keyword-tag">User Modeling</span>
+                            <span class="keyword-tag">Personalization</span>
+                        </div>
+                    </div>
+
+                    <div class="person-card">
+                        <img class="person-photo" src="https://randomuser.me/api/portraits/men/36.jpg" alt="Lim Tae-Gyu">
+                        <p class="person-name">Lim Tae-Gyu</p>
+                        <p class="person-title">Ph.D. Student</p>
+                        <div class="person-keywords">
+                            <span class="keyword-tag">Federated Learning</span>
+                            <span class="keyword-tag">Privacy</span>
+                        </div>
+                    </div>
+
+                    <div class="person-card">
+                        <img class="person-photo" src="https://randomuser.me/api/portraits/women/34.jpg" alt="Shin Ye-Jin">
+                        <p class="person-name">Shin Ye-Jin</p>
+                        <p class="person-title">Ph.D. Student</p>
+                        <div class="person-keywords">
+                            <span class="keyword-tag">Affective Computing</span>
+                            <span class="keyword-tag">Wearables</span>
+                        </div>
+                    </div>
+
+                    <div class="person-card">
+                        <img class="person-photo" src="https://randomuser.me/api/portraits/men/47.jpg" alt="Kwon Dong-Hyun">
+                        <p class="person-name">Kwon Dong-Hyun</p>
+                        <p class="person-title">Ph.D. Student</p>
+                        <div class="person-keywords">
+                            <span class="keyword-tag">Graph Neural Networks</span>
+                            <span class="keyword-tag">Process Optimization</span>
+                        </div>
+                    </div>
+
+                    <div class="person-card">
+                        <img class="person-photo" src="https://randomuser.me/api/portraits/women/52.jpg" alt="Jung Hye-Rim">
+                        <p class="person-name">Jung Hye-Rim</p>
+                        <p class="person-title">Ph.D. Student</p>
+                        <div class="person-keywords">
+                            <span class="keyword-tag">Conversational AI</span>
+                            <span class="keyword-tag">Dialogue Systems</span>
+                        </div>
+                    </div>
+
+                    <div class="person-card">
+                        <img class="person-photo" src="https://randomuser.me/api/portraits/men/61.jpg" alt="Bae Sung-Jin">
+                        <p class="person-name">Bae Sung-Jin</p>
+                        <p class="person-title">Ph.D. Student</p>
+                        <div class="person-keywords">
+                            <span class="keyword-tag">Robotics</span>
+                            <span class="keyword-tag">Teleoperation</span>
+                        </div>
+                    </div>
+
+                    <div class="person-card">
+                        <img class="person-photo" src="https://randomuser.me/api/portraits/women/63.jpg" alt="Song Mi-Rae">
+                        <p class="person-name">Song Mi-Rae</p>
+                        <p class="person-title">Ph.D. Student</p>
+                        <div class="person-keywords">
+                            <span class="keyword-tag">Digital Twin</span>
+                            <span class="keyword-tag">Simulation</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ══ Master ══ -->
+            <section class="people-section" id="master">
+                <h2 class="people-section-title">M.S. Students</h2>
+                <div class="people-grid">
+
+                    <div class="person-card">
+                        <img class="person-photo" src="https://randomuser.me/api/portraits/men/2.jpg" alt="An Ji-Ho">
+                        <p class="person-name">An Ji-Ho</p>
+                        <p class="person-title">M.S. Student</p>
+                        <div class="person-keywords">
+                            <span class="keyword-tag">Usability Testing</span>
+                            <span class="keyword-tag">Prototyping</span>
+                        </div>
+                    </div>
+
+                    <div class="person-card">
+                        <img class="person-photo" src="https://randomuser.me/api/portraits/women/5.jpg" alt="Kang So-Hyun">
+                        <p class="person-name">Kang So-Hyun</p>
+                        <p class="person-title">M.S. Student</p>
+                        <div class="person-keywords">
+                            <span class="keyword-tag">Data Visualization</span>
+                            <span class="keyword-tag">Dashboard Design</span>
+                        </div>
+                    </div>
+
+                    <div class="person-card">
+                        <img class="person-photo" src="https://randomuser.me/api/portraits/men/7.jpg" alt="Nam Woo-Jin">
+                        <p class="person-name">Nam Woo-Jin</p>
+                        <p class="person-title">M.S. Student</p>
+                        <div class="person-keywords">
+                            <span class="keyword-tag">Deep Learning</span>
+                            <span class="keyword-tag">Anomaly Detection</span>
+                        </div>
+                    </div>
+
+                    <div class="person-card">
+                        <img class="person-photo" src="https://randomuser.me/api/portraits/women/8.jpg" alt="Baek Yun-Seo">
+                        <p class="person-name">Baek Yun-Seo</p>
+                        <p class="person-title">M.S. Student</p>
+                        <div class="person-keywords">
+                            <span class="keyword-tag">Mobile UX</span>
+                            <span class="keyword-tag">Gesture Interaction</span>
+                        </div>
+                    </div>
+
+                    <div class="person-card">
+                        <img class="person-photo" src="https://randomuser.me/api/portraits/men/14.jpg" alt="Hwang Chan-Woo">
+                        <p class="person-name">Hwang Chan-Woo</p>
+                        <p class="person-title">M.S. Student</p>
+                        <div class="person-keywords">
+                            <span class="keyword-tag">Reinforcement Learning</span>
+                            <span class="keyword-tag">Control Systems</span>
+                        </div>
+                    </div>
+
+                    <div class="person-card">
+                        <img class="person-photo" src="https://randomuser.me/api/portraits/women/16.jpg" alt="Seo Eun-Bi">
+                        <p class="person-name">Seo Eun-Bi</p>
+                        <p class="person-title">M.S. Student</p>
+                        <div class="person-keywords">
+                            <span class="keyword-tag">Trustworthy AI</span>
+                            <span class="keyword-tag">Ethics</span>
+                        </div>
+                    </div>
+
+                    <div class="person-card">
+                        <img class="person-photo" src="https://randomuser.me/api/portraits/men/19.jpg" alt="Moon Jae-Won">
+                        <p class="person-name">Moon Jae-Won</p>
+                        <p class="person-title">M.S. Student</p>
+                        <div class="person-keywords">
+                            <span class="keyword-tag">Speech Interfaces</span>
+                            <span class="keyword-tag">Voice UX</span>
+                        </div>
+                    </div>
+
+                    <div class="person-card">
+                        <img class="person-photo" src="https://randomuser.me/api/portraits/women/23.jpg" alt="Ryu Ji-Soo">
+                        <p class="person-name">Ryu Ji-Soo</p>
+                        <p class="person-title">M.S. Student</p>
+                        <div class="person-keywords">
+                            <span class="keyword-tag">Eye Tracking</span>
+                            <span class="keyword-tag">Attention Modeling</span>
+                        </div>
+                    </div>
+
+                    <div class="person-card">
+                        <img class="person-photo" src="https://randomuser.me/api/portraits/men/26.jpg" alt="Cho Seung-Min">
+                        <p class="person-name">Cho Seung-Min</p>
+                        <p class="person-title">M.S. Student</p>
+                        <div class="person-keywords">
+                            <span class="keyword-tag">Transfer Learning</span>
+                            <span class="keyword-tag">Few-shot Learning</span>
+                        </div>
+                    </div>
+
+                    <div class="person-card">
+                        <img class="person-photo" src="https://randomuser.me/api/portraits/women/27.jpg" alt="Jeon Bo-Ram">
+                        <p class="person-name">Jeon Bo-Ram</p>
+                        <p class="person-title">M.S. Student</p>
+                        <div class="person-keywords">
+                            <span class="keyword-tag">Information Architecture</span>
+                            <span class="keyword-tag">Content Strategy</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ══ Intern ══ -->
+            <section class="people-section" id="intern">
+                <h2 class="people-section-title">Interns</h2>
+                <div class="people-grid">
+
+                    <div class="person-card">
+                        <img class="person-photo" src="https://randomuser.me/api/portraits/men/3.jpg" alt="Ha Joon-Seo">
+                        <p class="person-name">Ha Joon-Seo</p>
+                        <p class="person-title">Research Intern</p>
+                        <div class="person-keywords">
+                            <span class="keyword-tag">Frontend Dev</span>
+                            <span class="keyword-tag">UI Prototyping</span>
+                        </div>
+                    </div>
+
+                    <div class="person-card">
+                        <img class="person-photo" src="https://randomuser.me/api/portraits/women/9.jpg" alt="Im Chae-Won">
+                        <p class="person-name">Im Chae-Won</p>
+                        <p class="person-title">Research Intern</p>
+                        <div class="person-keywords">
+                            <span class="keyword-tag">Data Collection</span>
+                            <span class="keyword-tag">User Studies</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ══ Alumni ══ -->
+            <section class="people-section" id="alumni">
+                <h2 class="people-section-title">Alumni</h2>
+                <div class="alumni-list">
+
+                    <div class="alumni-item">
+                        <span class="alumni-name">Kim Min-Seok</span>
+                        <span class="alumni-degree">Ph.D.</span>
+                        <span class="alumni-current">Research Scientist, Samsung Research</span>
+                    </div>
+
+                    <div class="alumni-item">
+                        <span class="alumni-name">Lee Soo-Jin</span>
+                        <span class="alumni-degree">Ph.D.</span>
+                        <span class="alumni-current">Assistant Professor, POSTECH</span>
+                    </div>
+
+                    <div class="alumni-item">
+                        <span class="alumni-name">Park Hyun-Jun</span>
+                        <span class="alumni-degree">MS</span>
+                        <span class="alumni-current">UX Engineer, Kakao</span>
+                    </div>
+
+                    <div class="alumni-item">
+                        <span class="alumni-name">Choi Ye-Eun</span>
+                        <span class="alumni-degree">MS</span>
+                        <span class="alumni-current">Data Scientist, LG AI Research</span>
+                    </div>
+
+                    <div class="alumni-item">
+                        <span class="alumni-name">Jung Woo-Ram</span>
+                        <span class="alumni-degree">MS</span>
+                        <span class="alumni-current">AI Engineer, Naver</span>
+                    </div>
+
+                    <div class="alumni-item">
+                        <span class="alumni-name">Han So-Young</span>
+                        <span class="alumni-degree">Intern</span>
+                        <span class="alumni-current">M.S. Student, Seoul National University</span>
+                    </div>
+
+                    <div class="alumni-item">
+                        <span class="alumni-name">Oh Jae-Hyun</span>
+                        <span class="alumni-degree">Intern</span>
+                        <span class="alumni-current">Software Engineer, Hyundai Motor Company</span>
+                    </div>
+
+                </div>
+            </section>
+
+        </div><!-- /container -->
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../components.js"></script>
+    <script src="../script.js"></script>
+    <script>
+        // Tab filter
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const target = btn.dataset.target;
+                document.querySelectorAll('.people-section').forEach(section => {
+                    if (target === 'all' || section.id === target) {
+                        section.classList.remove('hidden');
+                    } else {
+                        section.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

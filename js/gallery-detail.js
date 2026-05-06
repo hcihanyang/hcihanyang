@@ -17,7 +17,7 @@ function displayGalleryDetail(gallery) {
 
     // 제목 설정
     document.getElementById('gallery-title').textContent = gallery.title;
-    document.title = `${gallery.title} - 산업AI 인재양성 부트캠프 사업단`;
+    document.title = `${gallery.title} - HY HCI Group`;
 
     // 메타 정보 설정
     document.getElementById('gallery-date').textContent = gallery.date;

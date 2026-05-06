@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>뉴스/보도자료 - 산업AI 인재양성 부트캠프 사업단</title>
+    <title>Events - HY HCI Group</title>
     <link rel="stylesheet" href="../styles.css?v=20251128">
 </head>
 <body>
@@ -11,22 +11,32 @@
     <main class="page-content">
         <div class="page-header">
             <div class="container">
-                <h1 class="page-title">뉴스/보도자료</h1>
+                <h1 class="page-title">Events</h1>
                 <p class="page-breadcrumb">
-                    <a href="../index.html">홈</a> &gt; <a href="notice.html">커뮤니티</a> &gt; <span>뉴스/보도자료</span>
+                    <a href="../index.html">Home</a> &gt; <span>Events</span>
                 </p>
             </div>
         </div>
         <section class="content-section">
             <div class="container">
                 <div class="content-box">
-                    <h2>최신 뉴스</h2>
-                    <div class="news-list-page" id="news-list">
-                        <!-- JavaScript로 동적 로드 -->
+                    <h2>All Events</h2>
+                    <div class="notice-table">
+                        <div class="notice-row notice-header-row">
+                            <div class="notice-num">No.</div>
+                            <div class="notice-subject">Title</div>
+                            <div class="notice-author">Author</div>
+                            <div class="notice-date-col">Date</div>
+                        </div>
+                        <div id="events-list">
+                            <div class="notice-row">
+                                <div class="notice-num" colspan="5" style="text-align: center; padding: 40px;">
+                                    Loading...
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="pagination" id="news-pagination">
-                        <!-- 페이지네이션 -->
-                    </div>
+                    <div class="pagination" id="events-pagination"></div>
                 </div>
             </div>
         </section>
@@ -35,6 +45,54 @@
     <script src="../components.js"></script>
     <script src="../script.js"></script>
     <script src="../js/data-loader.js"></script>
-    <script src="../js/news-list.js"></script>
+    <script>
+        const eventsPerPage = 10;
+        let eventsCurrentPage = 1;
+
+        window.addEventListener('dataLoaded', function () {
+            if (!eventsData || eventsData.length === 0) {
+                document.getElementById('events-list').innerHTML =
+                    '<div class="notice-row" style="display:block;text-align:center;padding:40px;color:#999;">No events registered yet.</div>';
+                return;
+            }
+            eventsData.sort((a, b) => b.id - a.id);
+            renderEvents(eventsCurrentPage);
+            renderEventsPagination();
+        });
+
+        function renderEvents(page) {
+            const start = (page - 1) * eventsPerPage;
+            const items = eventsData.slice(start, start + eventsPerPage);
+            document.getElementById('events-list').innerHTML = items.map(item => `
+                <div class="notice-row">
+                    <div class="notice-num">${item.isNew ? '<span class="badge-new">NEW</span>' : item.id}</div>
+                    <div class="notice-subject"><a href="news-detail.html?id=${item.id}">${item.title}</a></div>
+                    <div class="notice-author">${item.author || 'HY HCI Group'}</div>
+                    <div class="notice-date-col">${item.date}</div>
+                </div>
+            `).join('');
+        }
+
+        function renderEventsPagination() {
+            const totalPages = Math.ceil(eventsData.length / eventsPerPage);
+            const container = document.getElementById('events-pagination');
+            if (totalPages <= 1) { container.innerHTML = ''; return; }
+            let html = '';
+            if (eventsCurrentPage > 1)
+                html += `<a href="#" onclick="changeEventsPage(${eventsCurrentPage - 1});return false;">&laquo;</a>`;
+            for (let i = 1; i <= totalPages; i++)
+                html += `<a href="#" class="${i === eventsCurrentPage ? 'active' : ''}" onclick="changeEventsPage(${i});return false;">${i}</a>`;
+            if (eventsCurrentPage < totalPages)
+                html += `<a href="#" onclick="changeEventsPage(${eventsCurrentPage + 1});return false;">&raquo;</a>`;
+            container.innerHTML = html;
+        }
+
+        function changeEventsPage(page) {
+            eventsCurrentPage = page;
+            renderEvents(page);
+            renderEventsPagination();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>

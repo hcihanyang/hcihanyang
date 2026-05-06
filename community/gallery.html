@@ -1,32 +1,89 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>갤러리 - 산업AI 인재양성 부트캠프 사업단</title>
+    <title>Gallery - HY HCI Group</title>
     <link rel="stylesheet" href="../styles.css?v=20251128">
+    <style>
+        .insta-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            padding: 32px 0 60px;
+        }
+        @media (max-width: 640px) {
+            .insta-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+        }
+
+        .insta-item {
+            position: relative;
+            border-radius: 14px;
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+            background: #e8edf3;
+            cursor: default;
+        }
+        .insta-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.35s ease;
+        }
+        .insta-item:hover img {
+            transform: scale(1.06);
+        }
+        .insta-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.08) 55%, transparent 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 16px;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+        .insta-item:hover .insta-overlay {
+            opacity: 1;
+        }
+        .insta-overlay span {
+            color: #fff;
+            font-size: 0.88rem;
+            font-weight: 600;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .insta-date {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(0,0,0,0.45);
+            color: #fff;
+            font-size: 0.72rem;
+            border-radius: 6px;
+            padding: 3px 8px;
+        }
+    </style>
 </head>
 <body>
     <div id="header-placeholder"></div>
     <main class="page-content">
         <div class="page-header">
             <div class="container">
-                <h1 class="page-title">갤러리</h1>
+                <h1 class="page-title">Gallery</h1>
                 <p class="page-breadcrumb">
-                    <a href="../index.html">홈</a> &gt; <a href="notice.html">커뮤니티</a> &gt; <span>갤러리</span>
+                    <a href="../index.html">Home</a> &gt; <span>Gallery</span>
                 </p>
             </div>
         </div>
         <section class="content-section">
             <div class="container">
-                <div class="content-box">
-                    <h2>갤러리</h2>
-                    <div class="news-list-page" id="gallery-list">
-                        <!-- JavaScript로 동적 로드 -->
-                    </div>
-                    <div class="pagination" id="gallery-pagination">
-                        <!-- 페이지네이션 -->
-                    </div>
+                <div id="gallery-grid" class="insta-grid">
+                    <!-- JS로 렌더링 -->
                 </div>
             </div>
         </section>
@@ -35,6 +92,22 @@
     <script src="../components.js"></script>
     <script src="../script.js"></script>
     <script src="../js/data-loader.js"></script>
-    <script src="../js/gallery-list.js"></script>
+    <script>
+        window.addEventListener('dataLoaded', function () {
+            const grid = document.getElementById('gallery-grid');
+            if (!galleryData || galleryData.length === 0) {
+                grid.innerHTML = '<p style="text-align:center;padding:60px 0;color:#999;grid-column:1/-1;">No gallery items yet.</p>';
+                return;
+            }
+            const sorted = [...galleryData].sort((a, b) => b.id - a.id);
+            grid.innerHTML = sorted.map(item => `
+                <div class="insta-item">
+                    <img src="${item.thumbnail}" alt="${item.title}" loading="lazy">
+                    <span class="insta-date">${item.date}</span>
+                    <div class="insta-overlay"><span>${item.title}</span></div>
+                </div>
+            `).join('');
+        });
+    </script>
 </body>
 </html>
